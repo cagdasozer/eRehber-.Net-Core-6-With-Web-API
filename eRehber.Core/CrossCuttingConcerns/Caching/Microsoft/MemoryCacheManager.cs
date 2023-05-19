@@ -1,4 +1,4 @@
-﻿using eBilet.Core.Utilities.IoC;
+﻿using eRehber.Core.Utilities.IoC;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using System;

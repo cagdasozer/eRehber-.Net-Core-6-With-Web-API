@@ -1,3 +1,11 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using eRehber.Business.DependencyResolvers;
+using eRehber.Business.DependencyResolvers.Autofac;
+using eRehber.Core.DependencyResolvers;
+using eRehber.Core.Extensions;
+using eRehber.Core.Utilities.IoC;
+
 namespace eRehber.WebAPI
 {
 	public class Program
@@ -5,6 +13,15 @@ namespace eRehber.WebAPI
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+
+			builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+			builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacBusinessModule()));
+
+			builder.Services.AddDependencyResolvers(new ICoreModule[]
+			{
+				new CoreModule(),
+				new AutoMapperModule()
+			});
 
 			// Add services to the container.
 

@@ -1,6 +1,6 @@
 ﻿using Castle.DynamicProxy;
-using eBilet.Core.Utilities.Interceptors;
-using eBilet.Core.Utilities.IoC;
+using eRehber.Core.Utilities.Interceptors;
+using eRehber.Core.Utilities.IoC;
 using eRehber.Core.CrossCuttingConcerns.Caching;
 using Microsoft.Extensions.DependencyInjection;
 using System;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Messages
+namespace eRehber.Core.Utilities.Messages
 {
 	public static class AspectMessages
 	{

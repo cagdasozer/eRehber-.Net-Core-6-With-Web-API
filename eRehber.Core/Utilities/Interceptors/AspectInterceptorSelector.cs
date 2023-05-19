@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Interceptors
+namespace eRehber.Core.Utilities.Interceptors
 {
 	public class AspectInterceptorSelector : IInterceptorSelector
 	{

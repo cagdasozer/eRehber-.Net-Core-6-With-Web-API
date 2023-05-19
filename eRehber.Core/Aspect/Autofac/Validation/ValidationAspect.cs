@@ -1,6 +1,6 @@
 ﻿using Castle.DynamicProxy;
-using eBilet.Core.Utilities.Interceptors;
-using eBilet.Core.Utilities.Messages;
+using eRehber.Core.Utilities.Interceptors;
+using eRehber.Core.Utilities.Messages;
 using eRehber.Core.CrossCuttingConcerns.Validation;
 using FluentValidation;
 using System;

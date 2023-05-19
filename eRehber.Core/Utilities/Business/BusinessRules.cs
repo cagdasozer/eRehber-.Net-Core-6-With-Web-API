@@ -1,11 +1,11 @@
-﻿using eBilet.Core.Utilities.Result.Abstract;
+﻿using eRehber.Core.Utilities.Result.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Business
+namespace eRehber.Core.Utilities.Business
 {
 	public class BusinessRules
 	{

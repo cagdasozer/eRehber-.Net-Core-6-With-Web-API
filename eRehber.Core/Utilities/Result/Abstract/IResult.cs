@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Result.Abstract
+namespace eRehber.Core.Utilities.Result.Abstract
 {
 	public interface IResult
 	{

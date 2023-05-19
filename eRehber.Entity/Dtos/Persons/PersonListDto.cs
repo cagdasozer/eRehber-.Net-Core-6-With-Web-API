@@ -11,5 +11,5 @@ namespace eRehber.Entity.Dtos.Persons
 	public class PersonListDto :IDto
 	{
         public List<Person> Persons { get; set; }
-    }
+	}
 }

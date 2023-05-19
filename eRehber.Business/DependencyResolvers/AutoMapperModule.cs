@@ -1,5 +1,5 @@
 ﻿using eRehber.Core.Utilities.IoC;
-using Microsoft.AspNetCore.Http;
+using eRehber.DataAccess.AutoMapper.PersonProfile;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eRehber.Core.DependencyResolvers
+namespace eRehber.Business.DependencyResolvers
 {
-	public class CoreModule : ICoreModule
+	public class AutoMapperModule : ICoreModule
 	{
 		public void Load(IServiceCollection serviceCollection)
 		{
-			serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			serviceCollection.AddAutoMapper(typeof(PersonProfile));
 		}
 	}
 }

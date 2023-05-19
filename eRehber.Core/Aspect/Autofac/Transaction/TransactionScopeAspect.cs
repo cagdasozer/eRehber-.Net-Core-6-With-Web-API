@@ -1,5 +1,5 @@
 ﻿using Castle.DynamicProxy;
-using eBilet.Core.Utilities.Interceptors;
+using eRehber.Core.Utilities.Interceptors;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Result.Concrete
+namespace eRehber.Core.Utilities.Result.Concrete
 {
 	public class ErrorDataResult<T> : DataResult<T>
 	{

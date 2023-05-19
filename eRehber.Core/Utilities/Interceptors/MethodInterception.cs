@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBilet.Core.Utilities.Interceptors
+namespace eRehber.Core.Utilities.Interceptors
 {
 	public abstract class MethodInterception : MethodInterceptionBaseAttribute
 	{
