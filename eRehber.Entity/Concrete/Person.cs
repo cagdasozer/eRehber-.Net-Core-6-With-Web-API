@@ -24,7 +24,5 @@ namespace eRehber.Entity.Concrete
         public string Location { get; set; }
 
         public string InformationContent { get; set; }
-
-
     }
 }

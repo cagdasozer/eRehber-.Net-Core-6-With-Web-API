@@ -1,15 +1,17 @@
 ﻿using eRehber.Core.Entities.Abstract;
-using eRehber.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eRehber.Entity.Dtos.Persons
+namespace eRehber.Entity.Dtos.Location
 {
-	public class PersonListDto :IDto
+	public class LocationDto :IDto
 	{
-		public List<Person> Persons { get; set; }
+		public string Location { get; set; }
+
+        public string LocationCount { get; set; }
+
 	}
 }

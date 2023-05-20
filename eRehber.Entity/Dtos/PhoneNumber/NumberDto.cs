@@ -1,15 +1,17 @@
 ﻿using eRehber.Core.Entities.Abstract;
-using eRehber.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eRehber.Entity.Dtos.Persons
+namespace eRehber.Entity.Dtos.PhoneNumber
 {
-	public class PersonListDto :IDto
+	public class NumberDto :IDto
 	{
-		public List<Person> Persons { get; set; }
+		public string Location { get; set; }
+
+		public string NumberCount { get; set; }
+
 	}
 }

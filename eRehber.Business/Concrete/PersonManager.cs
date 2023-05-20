@@ -13,6 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using eRehber.Core.Aspect.Autofac.Validation;
 using eRehber.Business.ValidationRules.FluentValidation.Person;
+using Microsoft.VisualBasic;
+using eRehber.Entity.Dtos.Location;
+using eRehber.Entity.Dtos.PhoneNumber;
 
 namespace eRehber.Business.Concrete
 {
@@ -21,9 +24,9 @@ namespace eRehber.Business.Concrete
 		IPersonRepository _personRepository;
 		IMapper _mapper;
 
-		public PersonManager(IPersonRepository ticketRepository, IMapper mapper)
+		public PersonManager(IPersonRepository personRepository, IMapper mapper)
 		{
-			_personRepository = ticketRepository;
+			_personRepository = personRepository;
 			_mapper = mapper;
 		}
 
@@ -51,6 +54,16 @@ namespace eRehber.Business.Concrete
 			}
 		}
 
+		[ValidationAspect(typeof(PersonUpdateValidator))]
+		public async Task<IResult> UpdateAsync(PersonUpdateDto personUpdateDto)
+		{
+			var oldPerson = await _personRepository.GetAsync(p => p.UUID == personUpdateDto.UUID);
+			var person = _mapper.Map<PersonUpdateDto, Person>(personUpdateDto, oldPerson);
+			var updatePerson = await _personRepository.UpdateAsync(person);
+			await _personRepository.SaveAsync();
+			return new SuccessResult(Messages.PersonUpdated);
+		}
+
 		public async Task<IDataResult<PersonListDto>> GetAllAsync()
 		{
 			var persons = await _personRepository.GetAllAsync();
@@ -64,14 +77,57 @@ namespace eRehber.Business.Concrete
 			}
 		}
 
-		[ValidationAspect(typeof(PersonUpdateValidator))]
-		public async Task<IResult> UpdateAsync(PersonUpdateDto personUpdateDto)
+		public async Task<IDataResult<PersonDto>> GetByIdAsync(int personId)
 		{
-			var oldPerson = await _personRepository.GetAsync(p => p.UUID == personUpdateDto.UUID);
-			var person = _mapper.Map<PersonUpdateDto, Person>(personUpdateDto, oldPerson);
-			var updatePerson = await _personRepository.UpdateAsync(person);
-			await _personRepository.SaveAsync();
-			return new SuccessResult(Messages.PersonUpdated);
+			var person = await _personRepository.GetAsync(p => p.UUID == personId);
+			if (person != null)
+			{
+				return new SuccessDataResult<PersonDto>(new PersonDto { Person = person }, Messages.PersonGeted);
+			}
+			else
+			{
+				return new ErrorDataResult<PersonDto>(Messages.PersonNotFound);
+			}
 		}
+
+		public async Task<IDataResult<List<LocationDto>>> GetAllLocationCountDetails()
+		{
+			var result = await _personRepository.GetLocationCountDetails();
+			if (result != null)
+			{
+				return new SuccessDataResult<List<LocationDto>>(result, Messages.LocationCountListed);
+			}
+			else
+			{
+				return new ErrorDataResult<List<LocationDto>>(Messages.LocationNotFound);
+			}
+		}
+
+		public async Task<IDataResult<List<NumberDto>>> GetAllNumberCountDetails()
+		{
+			var result = await _personRepository.GetNumberCountLocations();
+			if (result != null)
+			{
+				return new SuccessDataResult<List<NumberDto>>(result, Messages.NumberCountListed);
+			}
+			else
+			{
+				return new ErrorDataResult<List<NumberDto>>(Messages.NumberNotFound);
+			}
+
+		}
+
+		public async Task<IDataResult<List<PersonCountDto>>> GetAllPersonCountDetails()
+		{
+			var result = await _personRepository.GetAllPersonLocation();
+			if (result != null)
+			{
+				return new SuccessDataResult<List<PersonCountDto>>(result, Messages.PersonCountListed);
+			}
+			else
+			{
+				return new ErrorDataResult<List<PersonCountDto>>(Messages.PersonNotFound);
+			}
+		}	
 	}
 }

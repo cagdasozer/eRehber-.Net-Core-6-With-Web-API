@@ -23,5 +23,12 @@ namespace eRehber.Business.Constants
 		internal static string EMailNotEmpty = "E-MAİL BOŞ OLAMAZ.";
 		internal static string CompanyNotEmpty = "ŞİRKET BİLGİSİ BOŞ OLAMAZ.";
 		internal static string LocationNotEmpty = "KONUM BOŞ OLAMAZ.";
+		internal static string PersonGeted = "KİŞİ GETİRİLDİ.";
+		internal static string LocationCountListed = "KONUMLAR lİSTELENDİ.";
+		internal static string LocationNotFound = "KONUM BULUNAMADI.";
+		internal static string NumberCountListed = "KONUMA GÖRE TELEFON NUMARASI SAYILARI LİSTELENDİ.";
+		internal static string NumberNotFound = "TELEFON NUMARASI BULUNAMADI.";
+		internal static string InformationContentNotEmpty = "BİLGİ İÇERİĞİ BOŞ OLAMAZ.";
+		internal static string PersonCountListed = "KONUMA GÖRE KİŞİ SAYILARI LİSTELENDİ.";
 	}
 }

@@ -31,6 +31,50 @@ namespace eRehber.WebAPI.Controllers
 			return BadRequest();
 		}
 
+		[HttpGet("getbyid")]
+		public async Task<IActionResult> GetByIdAsync(int personId)
+		{
+			var result = await _personService.GetByIdAsync(personId);
+			if (result.Success) 
+			{
+				return Ok(result);
+			}
+			return BadRequest();
+		}
+
+		[HttpGet("getalllocation")]
+		public async Task<IActionResult> GetAllWithLocationAsync()
+		{
+			var result = await _personService.GetAllLocationCountDetails();
+			if (result.Success)
+			{
+				return Ok(result);
+			}
+			return BadRequest();
+		}
+
+		[HttpGet("getallnumber")]
+		public async Task<IActionResult> GetAllWithNumberAsync()
+		{
+			var result = await _personService.GetAllNumberCountDetails();
+			if (result.Success)
+			{
+				return Ok(result);
+			}
+			return BadRequest();
+		}
+
+		[HttpGet("getallperson")]
+		public async Task<IActionResult> GetAllWithPersonAsync()
+		{
+			var result = await _personService.GetAllPersonCountDetails();
+			if (result.Success)
+			{
+				return Ok(result);
+			}
+			return BadRequest();
+		}
+
 		[HttpPost("add")]
 		public async Task<IActionResult> AddAsync(PersonAddDto ticket)
 		{
