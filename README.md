@@ -1,8 +1,10 @@
 # eRehber
 
-🌟 Project Description
-In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applications.
-
+<h3> 
+ 🌟 Project Description
+In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applicati
+</h3> 
+ 
 ➡️ ASP.Net Web API is used.
 ➡️ ASP.NET Core 6 is used.
 ➡️ Core First approach is adopted and Fluent API is used.
