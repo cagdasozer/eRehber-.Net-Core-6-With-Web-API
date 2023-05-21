@@ -2,7 +2,7 @@
 
 <h3> 
  🌟 Project Description
-In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applications. <br>
+In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applications. In this project, it was written considering the layered architectural structure and SOLID principles. Added FluentValidation support for Validation and Autofac support for IoC. You can download the project to your computer and run it after "migration". <br>
 </h3> 
  
 ➡️ ASP.Net Web API is used. <br>
