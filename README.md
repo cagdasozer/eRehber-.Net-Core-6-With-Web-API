@@ -2,7 +2,7 @@
 
 <h3> 
  🌟 Project Description
-In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applicati
+In this project, it is aimed to create a simple phone book application by designing a structure with web services to be used by web or mobile applications. <br>
 </h3> 
  
 ➡️ ASP.Net Web API is used.
